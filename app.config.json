@@ -1,0 +1,14 @@
+{
+	"version": "1.0.1",
+	"updated": "2020-09-02",
+	"slug": "wolf-popup",
+	"name": "Popup Manager",
+	"packagename": "WolfPopup",
+	"created": "2020-02-04",
+	"createdNice": "4th February 2020",
+	"description": "A WordPress to display popup into your website",
+	"link": "http://wolfthemes.com/plugin/wolf-popup",
+	"shortlink": "http://wlfthm.es/popup",
+	"author": "WolfThemes",
+	"authorURI": "http://wolfthemes.com"
+}
