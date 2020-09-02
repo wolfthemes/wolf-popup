@@ -42,9 +42,6 @@ class Wolf_Popup_Admin {
 
 		// Plugin settings link
 		add_filter( 'plugin_action_links_' . plugin_basename( WPOPUP_PATH ), array( $this, 'settings_action_links' ) );
-
-		// Plugin update notifications
-		add_action( 'admin_init', array( $this, 'plugin_update' ) );
 	}
 
 	/**
@@ -55,21 +52,6 @@ class Wolf_Popup_Admin {
 			'<a href="' . admin_url( 'themes.php?page=wolf-popup-settings' ) . '">' . esc_html__( 'Settings', 'wolf-popup' ) . '</a>',
 		);
 		return array_merge( $links, $setting_link );
-	}
-
-	/**
-	 * Plugin update
-	 */
-	public function plugin_update() {
-
-		$plugin_name = WPOPUP_SLUG;
-		$plugin_slug = WPOPUP_SLUG;
-		$plugin_path = WPOPUP_PATH;
-		$remote_path = WPOPUP_UPDATE_URL . '/' . $plugin_slug;
-		$plugin_data = get_plugin_data( WPOPUP_DIR . '/' . WPOPUP_SLUG . '.php' );
-		$current_version = $plugin_data['Version'];
-		include_once( 'class-update.php');
-		new Wolf_Popup_Update( $current_version, $remote_path, $plugin_path );
 	}
 }
 

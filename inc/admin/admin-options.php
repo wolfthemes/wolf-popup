@@ -22,7 +22,7 @@ $wolf_popup_options = array(
 				'type' => 'page',
 				'field_id' => 'page_id',
 				'label' => esc_html__( 'Content', 'wolf-popup' ),
-				'description' => esc_html__( 'Choose the page you want to use a your pop-up content.', 'wolf-popup' ),
+				'description' => esc_html__( 'Choose the page you want to use as your pop-up content.', 'wolf-popup' ),
 			),
 
 			array(
@@ -36,7 +36,7 @@ $wolf_popup_options = array(
 				'type' => 'checkbox',
 				'field_id' => 'disable_mobile',
 				'label' => esc_html__( 'Disable on Mobile', 'wolf-popup' ),
-				'description' => esc_html__( 'It is recommended as Google tends to penalize website that uses pop-ups on mobile.', 'wolf-popup' ),
+				'description' => esc_html__( 'It is recommended as Google tends to penalize websites that uses pop-ups on mobile.', 'wolf-popup' ),
 			),
 
 			array(
@@ -53,7 +53,7 @@ $wolf_popup_options = array(
 				'type' => 'checkbox',
 				'field_id' => 'exclude_mc_subs',
 				'label' => esc_html__( 'Exclude MailChimp subscribers', 'wolf-popup' ),
-				'description' => sprintf( esc_html__( 'Works only if %s is installed and if the %s is used to collect subscribers.', 'wolf-popup' ), 'Wolf WPBakery Page Builder Extension', 'MailChimp Page Builder Element' ),
+				'description' => sprintf( esc_html__( 'Works only if %s is installed and if the %s is used to collect subscribers.', 'wolf-popup' ), 'WPBakery Page Builder Extension by WolfThemes', 'MailChimp Page Builder Element' ),
 			),
 
 			array(
@@ -149,7 +149,7 @@ $wolf_popup_options = array(
 				'type' => 'page',
 				'field_id' => 'page_id',
 				'label' => esc_html__( 'Content', 'wolf-popup' ),
-				'description' => esc_html__( 'Choose the page you want to use a your pop-up content.', 'wolf-popup' ),
+				'description' => esc_html__( 'Choose the page you want to use as your pop-up content.', 'wolf-popup' ),
 			),
 
 			array(
@@ -163,7 +163,7 @@ $wolf_popup_options = array(
 				'type' => 'checkbox',
 				'field_id' => 'disable_mobile',
 				'label' => esc_html__( 'Disable on Mobile', 'wolf-popup' ),
-				'description' => esc_html__( 'It is recommended as Google tends to penalize website that uses pop-ups on mobile.', 'wolf-popup' ),
+				'description' => esc_html__( 'It is recommended as Google tends to penalize websites that uses pop-ups on mobile.', 'wolf-popup' ),
 			),
 
 			array(
@@ -180,7 +180,7 @@ $wolf_popup_options = array(
 				'type' => 'checkbox',
 				'field_id' => 'exclude_mc_subs',
 				'label' => esc_html__( 'Exclude MailChimp subscribers', 'wolf-popup' ),
-				'description' => sprintf( esc_html__( 'Works only if %s is installed and if the %s is used to collect subscribers.', 'wolf-popup' ), 'Wolf WPBakery Page Builder Extension', 'MailChimp Page Builder Element' ),
+				'description' => sprintf( esc_html__( 'Works only if %s is installed and if the %s is used to collect subscribers.', 'wolf-popup' ), 'WPBakery Page Builder Extension by WolfThemes', 'MailChimp Page Builder Element' ),
 			),
 
 			array(

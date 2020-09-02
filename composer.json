@@ -1,0 +1,16 @@
+{
+	"name": "wolfthemes/wolf-popup",
+	"description": "A WordPress plugin to manage popups.",
+	"type": "wordpress-plugin",
+	"homepage": "https://github.com/wolfthemes/wolf-playlist-manager",
+	"authors": [
+		{
+			"name": "WolfThemes",
+			"email": "contact@wolfthemes.com",
+			"homepage": "https://wolfthemes.com"
+		}
+	],
+	"require": {
+		"php": ">=5.6"
+	}
+}

@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Popup Manager
  * Plugin URI: http://wolfthemes.com/plugin/wolf-popup
- * Description: A WordPress to display popup into your website
- * Version: 1.0.1
+ * Description: A WordPress plugin to manage popups.
+ * Version: 1.0.2
  * Author: WolfThemes
  * Author URI: http://wolfthemes.com
  * Requires at least: 5.0
@@ -29,7 +29,7 @@ if ( ! class_exists( 'Wolf_Popup' ) ) {
 	 * Contains the main functions for Wolf_Popup
 	 *
 	 * @class Wolf_Popup
-	 * @version 1.0.1
+	 * @version 1.0.2
 	 * @since 1.0.0
 	 */
 	class Wolf_Popup {
@@ -37,7 +37,7 @@ if ( ! class_exists( 'Wolf_Popup' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.1';
+		public $version = '1.0.2';
 
 		/**
 		 * @var Popup Manager The single instance of the class
@@ -83,6 +83,8 @@ if ( ! class_exists( 'Wolf_Popup' ) ) {
 		private function init_hooks() {
 			register_activation_hook( __FILE__, array( $this, 'activate' ) );
 			add_action( 'init', array( $this, 'init' ), 0 );
+
+			add_action( 'admin_init', array( $this, 'plugin_update' ) );
 		}
 
 		/**
@@ -210,6 +212,34 @@ if ( ! class_exists( 'Wolf_Popup' ) ) {
 		 */
 		public function plugin_path() {
 			return untrailingslashit( plugin_dir_path( __FILE__ ) );
+		}
+
+		/**
+		 * Plugin update
+		 */
+		public function plugin_update() {
+
+			if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
+				include_once 'inc/admin/updater.php';
+			}
+
+			$repo = 'wolfthemes/wolf-popup';
+
+			$config = array(
+				'slug' => plugin_basename( __FILE__ ),
+				'proper_folder_name' => 'wolf-popup',
+				'api_url' => 'https://api.github.com/repos/' . $repo . '',
+				'raw_url' => 'https://raw.github.com/' . $repo . '/master/',
+				'github_url' => 'https://github.com/' . $repo . '',
+				'zip_url' => 'https://github.com/' . $repo . '/archive/master.zip',
+				'sslverify' => true,
+				'requires' => '5.0',
+				'tested' => '5.5',
+				'readme' => 'README.md',
+				'access_token' => '',
+			);
+
+			new WP_GitHub_Updater( $config );
 		}
 	}
 }

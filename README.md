@@ -1,9 +1,9 @@
 # Thanks for downloading Popup Manager!
 
-A WordPress to display popup into your website
+A WordPress plugin to manage popups.
 
 ## Plugin page
-http://wolfthemes.com/plugin/wolf-popup
+https://github.com/wolfthemes/wolf-playlist-manager
 
 ## Support
 Verified customers who have purchased a premium theme on [ThemeForest](http://wlfthm.es/tf)
