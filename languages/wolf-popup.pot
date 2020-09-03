@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Popup Manager 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-popup\n"
-"POT-Creation-Date: 2020-09-02 16:22:37+00:00\n"
+"POT-Creation-Date: 2020-09-03 07:53:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,6 +72,8 @@ msgid "Content"
 msgstr ""
 
 #: inc/admin/admin-options.php:25 inc/admin/admin-options.php:152
+#: pack/wolf-popup/inc/admin/admin-options.php:25
+#: pack/wolf-popup/inc/admin/admin-options.php:152
 msgid "Choose the page you want to use as your pop-up content."
 msgstr ""
 
@@ -94,6 +96,8 @@ msgid "Disable on Mobile"
 msgstr ""
 
 #: inc/admin/admin-options.php:39 inc/admin/admin-options.php:166
+#: pack/wolf-popup/inc/admin/admin-options.php:39
+#: pack/wolf-popup/inc/admin/admin-options.php:166
 msgid ""
 "It is recommended as Google tends to penalize websites that uses pop-ups on "
 "mobile."
@@ -266,7 +270,7 @@ msgstr ""
 msgid "The time before the modal window pops up in seconds."
 msgstr ""
 
-#: inc/admin/class-admin.php:52 pack/wolf-popup/inc/admin/class-admin.php:55
+#: inc/admin/class-admin.php:52 pack/wolf-popup/inc/admin/class-admin.php:52
 msgid "Settings"
 msgstr ""
 
@@ -343,23 +347,21 @@ msgstr ""
 msgid "Pop-Up Settings"
 msgstr ""
 
+#: inc/admin/updater.php:434 pack/wolf-popup/inc/admin/updater.php:434
+msgid ""
+"The plugin has been updated, but could not be reactivated. Please "
+"reactivate it manually."
+msgstr ""
+
+#: inc/admin/updater.php:435 pack/wolf-popup/inc/admin/updater.php:435
+msgid "Plugin reactivated successfully."
+msgstr ""
+
 #: inc/frontend/frontend-functions.php:181
 #: inc/frontend/frontend-functions.php:325
 #: pack/wolf-popup/inc/frontend/frontend-functions.php:181
 #: pack/wolf-popup/inc/frontend/frontend-functions.php:325
 msgid "Don't show this message again"
-msgstr ""
-
-#: pack/wolf-popup/inc/admin/admin-options.php:25
-#: pack/wolf-popup/inc/admin/admin-options.php:152
-msgid "Choose the page you want to use a your pop-up content."
-msgstr ""
-
-#: pack/wolf-popup/inc/admin/admin-options.php:39
-#: pack/wolf-popup/inc/admin/admin-options.php:166
-msgid ""
-"It is recommended as Google tends to penalize website that uses pop-ups on "
-"mobile."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
