@@ -1,14 +1,14 @@
 {
-	"version": "1.0.2",
-	"updated": "2020-09-02",
+	"version": "1.0.3",
+	"updated": "2020-09-14",
 	"slug": "wolf-popup",
 	"name": "Popup Manager",
 	"packagename": "WolfPopup",
 	"created": "2020-02-04",
 	"createdNice": "4th February 2020",
 	"description": "A WordPress plugin to manage popups.",
-	"link": "https://github.com/wolfthemes/wolf-playlist-manager",
-	"shortlink": "https://wlfthm.es/wolf-popup",
+	"link": "https://github.com/wolfthemes/wolf-popup",
+	"shortlink": "https://wlfthm.es/popup",
 	"author": "WolfThemes",
-	"authorURI": "http://wolfthemes.com"
+	"authorURI": "https://wolfthemes.com"
 }

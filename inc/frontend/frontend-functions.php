@@ -68,6 +68,13 @@ function wolf_popup_output_time_delayed_popup( $atts = array() ) {
 
 	extract( $atts );
 
+	/* filter to force disabling popup */
+	$enabled = apply_filters( 'wolf_popup_time_delayed_enabled', true );
+
+	if ( ! $enabled ) {
+		return;
+	}
+
 	if ( $dev_mode && ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
@@ -141,7 +148,7 @@ function wolf_popup_output_time_delayed_popup( $atts = array() ) {
 	}
 
 	$inline_style = $close_inline_style = $container_inline_style = '';
-	
+
 	$content_width = wolf_popup_sanitize_css_value( $content_width );
 
 	$inline_style .= "max-width:$content_width;";
@@ -158,11 +165,11 @@ function wolf_popup_output_time_delayed_popup( $atts = array() ) {
 	ob_start();
 	?>
 	<div id="wolf-popup-overlay-time-delayed" data-wolf-popup-type="time-delayed" data-wolf-popup-cookie-time="<?php echo absint( $cookie_time ); ?>" data-wolf-popup-delay="<?php echo absint( $delay ); ?>"  data-wolf-popup-count="<?php echo absint( $show_count ); ?>" style="<?php echo wolf_popup_esc_style_attr( $container_inline_style ); ?>" class="wolf-popup-overlay  <?php echo wolf_popup_sanitize_html_classes( array( 'wolf-popup-type-' . $type, 'wolf-popup-position-'  . $position ) ); ?>">
-		
+
 		<?php if ( 'full' === $type ) : ?>
 			<div class="wolf-popup-mask wolf-popup-close wolf-popup-close-button"></div>
-		<?php endif; ?>	
-	
+		<?php endif; ?>
+
 		<div class="wolf-popup-container" style="<?php echo wolf_popup_esc_style_attr( $inline_style ); ?>">
 			<div class="wolf-popup-content">
 				<a style="<?php echo wolf_popup_esc_style_attr( $close_inline_style ); ?>" href="#" id="wolf-popup-close" class="wolf-popup-close wolf-popup-close-button <?php echo ( 1 === $show_count ) ? 'wolf-popup-close-opt-out' : ''; ?>">X</a>
@@ -211,6 +218,13 @@ function wolf_popup_output_exit_intent_popup( $atts = array() ) {
 	) ) );
 
 	extract( $atts );
+
+	/* filter to force disabling popup */
+	$enabled = apply_filters( 'wolf_popup_exit_intent_enabled', true );
+
+	if ( ! $enabled ) {
+		return;
+	}
 
 	if ( $dev_mode && ! current_user_can( 'manage_options' ) ) {
 		return;
@@ -285,7 +299,7 @@ function wolf_popup_output_exit_intent_popup( $atts = array() ) {
 	}
 
 	$inline_style = $close_inline_style = $container_inline_style = '';
-	
+
 	$content_width = wolf_popup_sanitize_css_value( $content_width );
 
 	$inline_style .= "max-width:$content_width;";
@@ -302,11 +316,11 @@ function wolf_popup_output_exit_intent_popup( $atts = array() ) {
 	ob_start();
 	?>
 	<div id="wolf-popup-overlay-exit-intent" data-wolf-popup-type="exit-intent" data-wolf-popup-cookie-time="<?php echo absint( $cookie_time ); ?>" data-wolf-popup-delay="<?php echo absint( $delay ); ?>" data-wolf-popup-count="<?php echo absint( $show_count ); ?>" style="<?php echo wolf_popup_esc_style_attr( $container_inline_style ); ?>" class="wolf-popup-overlay  <?php echo wolf_popup_sanitize_html_classes( 'wolf-popup-type-' . $type ); ?>">
-		
+
 		<?php if ( 'full' === $type ) : ?>
 			<div class="wolf-popup-mask wolf-popup-close wolf-popup-close-button"></div>
-		<?php endif; ?>	
-	
+		<?php endif; ?>
+
 		<div class="wolf-popup-container" style="<?php echo wolf_popup_esc_style_attr( $inline_style ); ?>">
 			<div class="wolf-popup-content">
 				<a style="<?php echo wolf_popup_esc_style_attr( $close_inline_style ); ?>" href="#" id="wolf-popup-close" class="wolf-popup-close wolf-popup-close-button <?php echo ( 1 === $show_count ) ? 'wolf-popup-close-opt-out' : ''; ?>">X</a>
