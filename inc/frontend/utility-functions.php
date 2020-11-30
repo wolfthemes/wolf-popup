@@ -150,7 +150,7 @@ function wolf_popup_esc_style_attr( $style ) {
 	// remove double semicolon
 	$style = str_replace( array( ';;', '; ;' ), '', $style );
 
-	return esc_attr( trim( wvc_clean_spaces( $style ) ) );
+	return esc_attr( trim( wolf_popup_clean_spaces( $style ) ) );
 }
 
 /**
