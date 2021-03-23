@@ -1,8 +1,12 @@
 # Changelog
 
+#### 23th March 2021 - Version 1.0.5
+
+-   Fix: compatibility for new plugin to come
+
 #### 1st December 2020 - Version 1.0.4
 
--   Fix: wvc_clean_spaces functino error message
+-   Fix: wvc_clean_spaces function error message
 
 #### 14th September 2020 - Version 1.0.3
 

@@ -1,14 +1,14 @@
-# Copyright (C) 2020 WolfThemes
+# Copyright (C) 2021 WolfThemes
 # This file is distributed under the same license as the Popup Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Popup Manager 1.0.4\n"
+"Project-Id-Version: Popup Manager 1.0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-popup\n"
-"POT-Creation-Date: 2020-11-30 16:03:52+00:00\n"
+"POT-Creation-Date: 2021-03-19 13:59:04+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -274,76 +274,76 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: inc/admin/class-options.php:69 inc/admin/class-options.php:70
-#: pack/wolf-popup/inc/admin/class-options.php:69
-#: pack/wolf-popup/inc/admin/class-options.php:70
+#: inc/admin/class-options.php:84 inc/admin/class-options.php:85
+#: pack/wolf-popup/inc/admin/class-options.php:83
+#: pack/wolf-popup/inc/admin/class-options.php:84
 msgid "Pop-Up"
 msgstr ""
 
-#: inc/admin/class-options.php:202
-#: pack/wolf-popup/inc/admin/class-options.php:202
+#: inc/admin/class-options.php:217
+#: pack/wolf-popup/inc/admin/class-options.php:216
 msgid "- Disabled -"
 msgstr ""
 
-#: inc/admin/class-options.php:258 inc/admin/class-options.php:288
-#: pack/wolf-popup/inc/admin/class-options.php:258
-#: pack/wolf-popup/inc/admin/class-options.php:288
+#: inc/admin/class-options.php:277 inc/admin/class-options.php:312
+#: pack/wolf-popup/inc/admin/class-options.php:272
+#: pack/wolf-popup/inc/admin/class-options.php:302
 msgid "Clear"
 msgstr ""
 
-#: inc/admin/class-options.php:259 inc/admin/class-options.php:289
-#: pack/wolf-popup/inc/admin/class-options.php:259
-#: pack/wolf-popup/inc/admin/class-options.php:289
+#: inc/admin/class-options.php:278 inc/admin/class-options.php:313
+#: pack/wolf-popup/inc/admin/class-options.php:273
+#: pack/wolf-popup/inc/admin/class-options.php:303
 msgid "Choose an image"
 msgstr ""
 
-#: inc/admin/class-options.php:271
-#: pack/wolf-popup/inc/admin/class-options.php:271
+#: inc/admin/class-options.php:290
+#: pack/wolf-popup/inc/admin/class-options.php:285
 msgid "Color"
 msgstr ""
 
-#: inc/admin/class-options.php:283
-#: pack/wolf-popup/inc/admin/class-options.php:283
+#: inc/admin/class-options.php:302
+#: pack/wolf-popup/inc/admin/class-options.php:297
 msgid "Image"
 msgstr ""
 
-#: inc/admin/class-options.php:300
-#: pack/wolf-popup/inc/admin/class-options.php:300
+#: inc/admin/class-options.php:324
+#: pack/wolf-popup/inc/admin/class-options.php:314
 msgid "Repeat"
 msgstr ""
 
-#: inc/admin/class-options.php:326
-#: pack/wolf-popup/inc/admin/class-options.php:326
+#: inc/admin/class-options.php:350
+#: pack/wolf-popup/inc/admin/class-options.php:340
 msgid "Position"
 msgstr ""
 
-#: inc/admin/class-options.php:340
-#: pack/wolf-popup/inc/admin/class-options.php:340
+#: inc/admin/class-options.php:364
+#: pack/wolf-popup/inc/admin/class-options.php:354
 msgid "cover (resize)"
 msgstr ""
 
-#: inc/admin/class-options.php:341
-#: pack/wolf-popup/inc/admin/class-options.php:341
+#: inc/admin/class-options.php:365
+#: pack/wolf-popup/inc/admin/class-options.php:355
 msgid "normal"
 msgstr ""
 
-#: inc/admin/class-options.php:342
-#: pack/wolf-popup/inc/admin/class-options.php:342
+#: inc/admin/class-options.php:366
+#: pack/wolf-popup/inc/admin/class-options.php:356
 msgid "responsive (hard resize)"
 msgstr ""
 
-#: inc/admin/class-options.php:347
-#: pack/wolf-popup/inc/admin/class-options.php:347
+#: inc/admin/class-options.php:371
+#: pack/wolf-popup/inc/admin/class-options.php:361
 msgid "Size"
 msgstr ""
 
-#: inc/admin/class-options.php:367
-#: pack/wolf-popup/inc/admin/class-options.php:367
+#: inc/admin/class-options.php:391
+#: pack/wolf-popup/inc/admin/class-options.php:381
 msgid "Attachment"
 msgstr ""
 
-#: inc/admin/class-options.php:392
-#: pack/wolf-popup/inc/admin/class-options.php:392
+#: inc/admin/class-options.php:416
+#: pack/wolf-popup/inc/admin/class-options.php:406
 msgid "Pop-Up Settings"
 msgstr ""
 
@@ -357,10 +357,10 @@ msgstr ""
 msgid "Plugin reactivated successfully."
 msgstr ""
 
-#: inc/frontend/frontend-functions.php:188
-#: inc/frontend/frontend-functions.php:339
-#: pack/wolf-popup/inc/frontend/frontend-functions.php:181
-#: pack/wolf-popup/inc/frontend/frontend-functions.php:325
+#: inc/frontend/frontend-functions.php:198
+#: inc/frontend/frontend-functions.php:355
+#: pack/wolf-popup/inc/frontend/frontend-functions.php:198
+#: pack/wolf-popup/inc/frontend/frontend-functions.php:355
 msgid "Don't show this message again"
 msgstr ""
 

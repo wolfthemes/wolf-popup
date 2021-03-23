@@ -3,7 +3,7 @@
  * Plugin Name: Popup Manager
  * Plugin URI: http://wolfthemes.com/plugin/wolf-popup
  * Description: A WordPress plugin to manage popups.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: WolfThemes
  * Author URI: http://wolfthemes.com
  * Requires at least: 5.0
@@ -29,7 +29,7 @@ if ( ! class_exists( 'Wolf_Popup' ) ) {
 	 * Contains the main functions for Wolf_Popup
 	 *
 	 * @class Wolf_Popup
-	 * @version 1.0.4
+	 * @version 1.0.5
 	 * @since 1.0.0
 	 */
 	class Wolf_Popup {
@@ -37,7 +37,7 @@ if ( ! class_exists( 'Wolf_Popup' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.4';
+		public $version = '1.0.5';
 
 		/**
 		 * @var Popup Manager The single instance of the class

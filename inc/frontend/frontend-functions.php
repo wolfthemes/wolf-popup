@@ -17,54 +17,64 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function wolf_popup_enqueue_scripts() {
 
-	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	$folder  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '/min';
+	$suffix  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 	$version = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? time() : WPOPUP_VERSION;
 
 	/* Don't serve minified JS files if Autoptimize plugin is activated */
 	if ( defined( 'AUTOPTIMIZE_PLUGIN_DIR' ) ) {
 		$suffix = '';
+		$folder = '';
 	}
 
-	// Styles
+	// Styles.
 	wp_enqueue_style( 'wolf-popup', WPOPUP_CSS . '/popup' . $suffix . '.css', array(), $version, 'all' );
 
-	// Scripts
-	wp_enqueue_script( 'wolf-popup', WPOPUP_JS . '/popup' . $suffix . '.js', array( 'jquery' ), $version, true );
+	// Scripts.
+	wp_enqueue_script( 'wolf-popup', WPOPUP_JS . $folder . '/popup' . $suffix . '.js', array( 'jquery' ), $version, true );
 
-	// Add JS global variables
+	// Add JS global variables.
 	wp_localize_script(
-		'wolf-popup', 'WolfPopupParams', array(
+		'wolf-popup',
+		'WolfPopupParams',
+		array(
 			'themeSlug' => wolf_popup_get_theme_slug(),
-			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-			'isMobile' => wp_is_mobile(),
+			'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
+			'isMobile'  => wp_is_mobile(),
 			'themeSlug' => wolf_popup_get_theme_slug(),
 		)
 	);
 }
-add_action( 'wp_enqueue_scripts',  'wolf_popup_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'wolf_popup_enqueue_scripts' );
 
 /**
  * Output time delayed popup
  */
 function wolf_popup_output_time_delayed_popup( $atts = array() ) {
 
-	$atts = apply_filters( 'wolf_popup_time_delayed_atts', wp_parse_args( $atts, array(
-		'type' => wolf_popup_get_option( 'time-delayed', 'type', 'full' ),
-		'position' => wolf_popup_get_option( 'time-delayed', 'position', 'bottom-left' ),
-		'page_id' => wolf_popup_get_option( 'time-delayed', 'page_id' ),
-		'content_width' => wolf_popup_get_option( 'time-delayed', 'content_width', 500 ),
-		'delay' => wolf_popup_get_option( 'time-delayed', 'delay', 15 ),
-		'show_count' => wolf_popup_get_option( 'time-delayed', 'show_count', 2 ),
-		'cookie_time' => wolf_popup_get_option( 'time-delayed', 'cookie_time', 1 ),
-		'include_post_types' => wolf_popup_get_option( 'time-delayed', 'include_post_types' ),
-		'exclude_post_types' => wolf_popup_get_option( 'time-delayed', 'exclude_post_types' ),
-		'include_ids' => wolf_popup_get_option( 'time-delayed', 'include_ids' ),
-		'exclude_ids' => wolf_popup_get_option( 'time-delayed', 'exclude_ids' ),
-		'exclude_mc_subs' => wolf_popup_get_option( 'time-delayed', 'exclude_mc_subs' ),
-		'close_button_color' => wolf_popup_get_option( 'time-delayed', 'close_button_color' ),
-		'dev_mode' => wolf_popup_get_option( 'time-delayed', 'dev_mode', false ),
-		'disable_mobile' => wolf_popup_get_option( 'time-delayed', 'disable_mobile', false ),
-	) ) );
+	$atts = apply_filters(
+		'wolf_popup_time_delayed_atts',
+		wp_parse_args(
+			$atts,
+			array(
+				'type'               => wolf_popup_get_option( 'time-delayed', 'type', 'full' ),
+				'position'           => wolf_popup_get_option( 'time-delayed', 'position', 'bottom-left' ),
+				'page_id'            => wolf_popup_get_option( 'time-delayed', 'page_id' ),
+				'content_width'      => wolf_popup_get_option( 'time-delayed', 'content_width', 500 ),
+				'delay'              => wolf_popup_get_option( 'time-delayed', 'delay', 15 ),
+				'show_count'         => wolf_popup_get_option( 'time-delayed', 'show_count', 2 ),
+				'cookie_time'        => wolf_popup_get_option( 'time-delayed', 'cookie_time', 1 ),
+				'include_post_types' => wolf_popup_get_option( 'time-delayed', 'include_post_types' ),
+				'exclude_post_types' => wolf_popup_get_option( 'time-delayed', 'exclude_post_types' ),
+				'include_ids'        => wolf_popup_get_option( 'time-delayed', 'include_ids' ),
+				'exclude_ids'        => wolf_popup_get_option( 'time-delayed', 'exclude_ids' ),
+				'exclude_mc_subs'    => wolf_popup_get_option( 'time-delayed', 'exclude_mc_subs' ),
+				'close_button_color' => wolf_popup_get_option( 'time-delayed', 'close_button_color' ),
+				'dev_mode'           => wolf_popup_get_option( 'time-delayed', 'dev_mode', false ),
+				'disable_mobile'     => wolf_popup_get_option( 'time-delayed', 'disable_mobile', false ),
+			)
+		)
+	);
 
 	extract( $atts );
 
@@ -84,8 +94,8 @@ function wolf_popup_output_time_delayed_popup( $atts = array() ) {
 	}
 
 	$current_post_id = wolf_popup_get_the_ID();
-	$post_type = get_post_type( $current_post_id );
-	$show_count = ( $show_count ) ? absint( $show_count ) : 2;
+	$post_type       = get_post_type( $current_post_id );
+	$show_count      = ( $show_count ) ? absint( $show_count ) : 2;
 
 	if ( apply_filters( 'wolf_popup_hide_time_delayed', false ) ) {
 		return;
@@ -159,12 +169,12 @@ function wolf_popup_output_time_delayed_popup( $atts = array() ) {
 
 	if ( 'non_intrusive' === $type ) {
 		$container_inline_style .= "max-width:$content_width;";
-		$inline_style = '';
+		$inline_style            = '';
 	}
 
 	ob_start();
 	?>
-	<div id="wolf-popup-overlay-time-delayed" data-wolf-popup-type="time-delayed" data-wolf-popup-cookie-time="<?php echo absint( $cookie_time ); ?>" data-wolf-popup-delay="<?php echo absint( $delay ); ?>"  data-wolf-popup-count="<?php echo absint( $show_count ); ?>" style="<?php echo wolf_popup_esc_style_attr( $container_inline_style ); ?>" class="wolf-popup-overlay  <?php echo wolf_popup_sanitize_html_classes( array( 'wolf-popup-type-' . $type, 'wolf-popup-position-'  . $position ) ); ?>">
+	<div id="wolf-popup-overlay-time-delayed" data-wolf-popup-type="time-delayed" data-wolf-popup-cookie-time="<?php echo absint( $cookie_time ); ?>" data-wolf-popup-delay="<?php echo absint( $delay ); ?>"  data-wolf-popup-count="<?php echo absint( $show_count ); ?>" style="<?php echo wolf_popup_esc_style_attr( $container_inline_style ); ?>" class="wolf-popup-overlay  <?php echo wolf_popup_sanitize_html_classes( array( 'wolf-popup-type-' . $type, 'wolf-popup-position-' . $position ) ); ?>">
 
 		<?php if ( 'full' === $type ) : ?>
 			<div class="wolf-popup-mask wolf-popup-close wolf-popup-close-button"></div>
@@ -200,22 +210,28 @@ add_action( 'wolf_body_start', 'wolf_popup_output_time_delayed_popup' );
  */
 function wolf_popup_output_exit_intent_popup( $atts = array() ) {
 
-	$atts = apply_filters( 'wolf_popup_exit_intent_atts', wp_parse_args( $atts, array(
-		'type' => wolf_popup_get_option( 'exit-intent', 'type', 'full' ),
-		'page_id' => wolf_popup_get_option( 'exit-intent', 'page_id' ),
-		'content_width' => wolf_popup_get_option( 'exit-intent', 'content_width', 650 ),
-		'show_count' => wolf_popup_get_option( 'exit-intent', 'show_count', 2 ),
-		'delay' => wolf_popup_get_option( 'exit-intent', 'delay', 5 ),
-		'cookie_time' => wolf_popup_get_option( 'exit-intent', 'cookie_time', 1 ),
-		'include_post_types' => wolf_popup_get_option( 'exit-intent', 'include_post_types' ),
-		'exclude_post_types' => wolf_popup_get_option( 'exit-intent', 'exclude_post_types' ),
-		'include_ids' => wolf_popup_get_option( 'exit-intent', 'include_ids' ),
-		'exclude_ids' => wolf_popup_get_option( 'exit-intent', 'exclude_ids' ),
-		'exclude_mc_subs' => wolf_popup_get_option( 'exit-intent', 'exclude_mc_subs' ),
-		'close_button_color' => wolf_popup_get_option( 'exit-intent', 'close_button_color' ),
-		'dev_mode' => wolf_popup_get_option( 'exit-intent', 'dev_mode', false ),
-		'disable_mobile' => wolf_popup_get_option( 'exit-intent', 'disable_mobile', false ),
-	) ) );
+	$atts = apply_filters(
+		'wolf_popup_exit_intent_atts',
+		wp_parse_args(
+			$atts,
+			array(
+				'type'               => wolf_popup_get_option( 'exit-intent', 'type', 'full' ),
+				'page_id'            => wolf_popup_get_option( 'exit-intent', 'page_id' ),
+				'content_width'      => wolf_popup_get_option( 'exit-intent', 'content_width', 650 ),
+				'show_count'         => wolf_popup_get_option( 'exit-intent', 'show_count', 2 ),
+				'delay'              => wolf_popup_get_option( 'exit-intent', 'delay', 5 ),
+				'cookie_time'        => wolf_popup_get_option( 'exit-intent', 'cookie_time', 1 ),
+				'include_post_types' => wolf_popup_get_option( 'exit-intent', 'include_post_types' ),
+				'exclude_post_types' => wolf_popup_get_option( 'exit-intent', 'exclude_post_types' ),
+				'include_ids'        => wolf_popup_get_option( 'exit-intent', 'include_ids' ),
+				'exclude_ids'        => wolf_popup_get_option( 'exit-intent', 'exclude_ids' ),
+				'exclude_mc_subs'    => wolf_popup_get_option( 'exit-intent', 'exclude_mc_subs' ),
+				'close_button_color' => wolf_popup_get_option( 'exit-intent', 'close_button_color' ),
+				'dev_mode'           => wolf_popup_get_option( 'exit-intent', 'dev_mode', false ),
+				'disable_mobile'     => wolf_popup_get_option( 'exit-intent', 'disable_mobile', false ),
+			)
+		)
+	);
 
 	extract( $atts );
 
@@ -235,8 +251,8 @@ function wolf_popup_output_exit_intent_popup( $atts = array() ) {
 	}
 
 	$current_post_id = wolf_popup_get_the_ID();
-	$post_type = get_post_type( $current_post_id );
-	$show_count = ( $show_count ) ? absint( $show_count ) : 2;
+	$post_type       = get_post_type( $current_post_id );
+	$show_count      = ( $show_count ) ? absint( $show_count ) : 2;
 
 	if ( apply_filters( 'wolf_popup_hide_exit_intent', false ) ) {
 		return;
@@ -310,7 +326,7 @@ function wolf_popup_output_exit_intent_popup( $atts = array() ) {
 
 	if ( 'non_intrusive' === $type ) {
 		$container_inline_style .= "max-width:$content_width;";
-		$inline_style = '';
+		$inline_style            = '';
 	}
 
 	ob_start();

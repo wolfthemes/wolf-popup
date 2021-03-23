@@ -5,7 +5,7 @@
  */
 /* jshint -W062 */
 
-/* global WVC, WolfPopupParams */
+/* global WVC, WolfCore, WolfPopupParams */
 var WolfPopup = function( $ ) {
 
 	'use strict';
@@ -20,6 +20,8 @@ var WolfPopup = function( $ ) {
 		timeDelayedCount : 0,
 		exitIntentOpen : false,
 		exitIntentClock : 0,
+		isWVC: 'undefined' !== typeof WVC,
+		isWolfCore: 'undefined' !== typeof WolfCore,
 
 		/**
 		 * Init UI
@@ -36,7 +38,7 @@ var WolfPopup = function( $ ) {
 
 			this.timeDelayedClock = sessionStorage.getItem( 'wolf-popup-time-delayed-timer' );
 			this.timeDelayedCount = sessionStorage.getItem( 'wolf-popup-time-delayed-count' ) || 0;
-			
+
 			this.exitIntentClock = sessionStorage.getItem( 'wolf-popup-exit-intent-timer' );
 			this.exitIntentCount = sessionStorage.getItem( 'wolf-popup-exit-intent-count' ) || 0;
 
@@ -44,12 +46,24 @@ var WolfPopup = function( $ ) {
 			this.exitIntentPopUp();
 			this.closeButton();
 
-			// Reset and reinit anim effect
-			$( window ).on( 'wvc_fullpage_changed', function() {
-				WVC.resetAOS( $( '.wolf-popup' ) );
-			} );
+			if ( this.isWolfCore ) {
 
-			WVC.resetAOS( $( '.wolf-popup' ) );
+				// Reset and reinit anim effect
+				$( window ).on( 'wolf_core_fullpage_changed', function() {
+					WolfCore.resetAOS( $( '.wolf-popup' ) );
+				} );
+
+				WolfCore.resetAOS( $( '.wolf-popup' ) );
+
+			} else if ( this.isWVC ) {
+				// Reset and reinit anim effect
+				$( window ).on( 'wvc_fullpage_changed', function() {
+					WVC.resetAOS( $( '.wolf-popup' ) );
+				} );
+
+				WVC.resetAOS( $( '.wolf-popup' ) );
+			}
+
 
 			/* Set popup height */
 			$( window ).resize( function() {
@@ -60,7 +74,7 @@ var WolfPopup = function( $ ) {
 		},
 
 		timeDelayedPopUp : function () {
-			
+
 			if ( $( '#wolf-popup-overlay-time-delayed' ).length ) {
 
 				if ( 'opt-out' === Cookies.get( 'wolf_popup_time_delayed' ) ) {
@@ -99,25 +113,25 @@ var WolfPopup = function( $ ) {
 					if ( count > _this.timeDelayedCount && delay < _this.timeDelayedClock && _this.open === false ) {
 
 						_this.timeDelayedClock = 0;
-						
+
 						clearInterval( timer );
 						sessionStorage.setItem( 'wolf-popup-time-delayed-timer', 0 );
-						
+
 						/* Show popup */
 						_this.showPopup( 'time-delayed' );
-					
+
 					} else {
 						_this.timeDelayedClock++;
 						sessionStorage.setItem( 'wolf-popup-time-delayed-timer', _this.timeDelayedClock );
 						//console.log( _this.timeDelayedClock );
 					}
-				
+
 				}, 1000 );
 			}
 		},
 
 		exitIntentPopUp : function () {
-			
+
 			if ( $( '#wolf-popup-overlay-exit-intent' ).length ) {
 
 				if ( 'opt-out' === Cookies.get( 'wolf_popup_exit_intent' ) ) {
@@ -156,22 +170,22 @@ var WolfPopup = function( $ ) {
 					if ( count > _this.exitIntentCount && delay < _this.exitIntentClock && _this.open === false ) {
 
 						_this.exitIntentClock = 0;
-						
+
 						clearInterval( timer );
 						sessionStorage.setItem( 'wolf-popup-exit-intent-timer', 0 );
-						
+
 						/* Show popup */
 						$( document ).on( 'mouseleave', function() {
 							//console.log( 'open ' + _this.open );
 							_this.showPopup( 'exit-intent' );
 						} );
-					
+
 					} else {
 						_this.exitIntentClock++;
 						sessionStorage.setItem( 'wolf-popup-exit-intent-timer', _this.exitIntentClock );
 						//console.log( _this.exitIntentClock );
 					}
-				
+
 				}, 1000 );
 			}
 		},
@@ -189,7 +203,7 @@ var WolfPopup = function( $ ) {
 				count;
 
 			$( document ).on( 'click', '.wolf-popup-close', function( event ) {
-				
+
 				event.preventDefault();
 
 				$closeButton = $( this ),
@@ -199,7 +213,7 @@ var WolfPopup = function( $ ) {
 				count = $overlay.data( 'wolf-popup-count' );
 
 				if ( 'time-delayed' === type ) {
-					
+
 					/* Set cookie */
 					if ( $closeButton.hasClass( 'wolf-popup-close-opt-out' ) ) {
 						Cookies.set( 'wolf_popup_time_delayed', 'opt-out', { expires: cookieTime, path: '/' } );
@@ -293,11 +307,11 @@ var WolfPopup = function( $ ) {
 			//console.log( 'open' );
 
 			$overlay.one( WVC.transitionEventEnd(), function() {
-				
+
 				$overlay.addClass( 'wolf-popup-overlay-show' );
-				
+
 				$( '#wolf-popup-' + type ).one( WVC.transitionEventEnd(), function() {
-					
+
 					if ( ! _this.animated ) {
 						WVC.doWow();
 						WVC.doAOS( $( this ) );
@@ -308,7 +322,7 @@ var WolfPopup = function( $ ) {
 					}
 				} );
 			} );
-			
+
 		}
 	};
 

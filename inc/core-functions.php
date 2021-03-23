@@ -43,15 +43,15 @@ function wolf_popup_get_the_ID() {
 
 		$post_id = get_option( 'woocommerce_shop_page_id' );
 
-	// Get post ID outside the loop
+		// Get post ID outside the loop
 	} elseif ( is_object( $wp_query ) && isset( $wp_query->queried_object ) && isset( $wp_query->queried_object->ID ) ) {
-		
+
 		$post_id = $wp_query->queried_object->ID;
-	
+
 	} else {
 		$post_id = get_the_ID();
 	}
-	
+
 	return $post_id;
 }
 
@@ -80,7 +80,6 @@ function wolf_popup_get_option( $index = '', $name, $default = null ) {
 
 			return $default;
 		}
-
 	} elseif ( $default ) {
 
 		return $default;

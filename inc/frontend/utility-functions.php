@@ -121,7 +121,7 @@ function wolf_popup_sanitize_css_field( $style ) {
 		return;
 	}
 
-	if ( ';' !== substr( $style, -1) ) {
+	if ( ';' !== substr( $style, -1 ) ) {
 		$style = $style . ';'; // add end semicolon if missing
 	}
 
@@ -143,7 +143,7 @@ function wolf_popup_esc_style_attr( $style ) {
 		return;
 	}
 
-	if ( ';' !== substr( $style, -1) ) {
+	if ( ';' !== substr( $style, -1 ) ) {
 		$style = $style . ';'; // add end semicolon if missing
 	}
 
@@ -168,9 +168,9 @@ function wolf_popup_sanitize_css_value( $value, $default_unit = 'px', $default_v
 	$pattern = '/^(\d*(?:\.\d+)?)\s*(px|\%|in|cm|mm|em|rem|ex|pt|pc|vw|vh|vmin|vmax)?$/';
 	// allowed metrics: http://www.w3schools.com/cssref/css_units.asp
 	$regexr = preg_match( $pattern, $value, $matches );
-	$value = isset( $matches[1] ) ? absint( $matches[1] ) : $default_value;
-	$unit = isset( $matches[2] ) ? esc_attr( $matches[2] ) : $default_unit;
-	$value = $value . $unit;
+	$value  = isset( $matches[1] ) ? absint( $matches[1] ) : $default_value;
+	$unit   = isset( $matches[2] ) ? esc_attr( $matches[2] ) : $default_unit;
+	$value  = $value . $unit;
 
 	return $value;
 }
@@ -183,21 +183,20 @@ function wolf_popup_sanitize_css_value( $value, $default_unit = 'px', $default_v
  *
  * @uses sanitize_html_class
  * @param (mixed: string/array) $class   "blue hedgehog goes shopping" or array("blue", "hedgehog", "goes", "shopping")
- * @param (mixed) $fallback Anything you want returned in case of a failure
+ * @param (mixed)               $fallback Anything you want returned in case of a failure
  * @return (mixed: string / $fallback )
  */
 function wolf_popup_sanitize_html_classes( $class, $fallback = null ) {
 
 	// Explode it, if it's a string
 	if ( is_string( $class ) ) {
-		$class = explode( ' ', $class);
+		$class = explode( ' ', $class );
 	}
 
 	if ( is_array( $class ) && count( $class ) > 0 ) {
 		$class = array_unique( array_map( 'sanitize_html_class', $class ) );
 		return trim( implode( ' ', $class ) );
-	}
-	else {
+	} else {
 		return trim( sanitize_html_class( $class, $fallback ) );
 	}
 }
@@ -206,7 +205,7 @@ function wolf_popup_sanitize_html_classes( $class, $fallback = null ) {
  * Straight from VC
  *
  * @param $content
- * @param bool $autop
+ * @param bool    $autop
  * @return string
  */
 function wolf_popup_remove_wpautop( $content, $autop = false ) {

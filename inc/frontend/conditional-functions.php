@@ -16,9 +16,9 @@ defined( 'ABSPATH' ) || exit;
  * Maintenance
  */
 function wolf_popup_is_maintenance_page() {
-	
+
 	$wolf_maintenance_settings = get_option( 'wolf_maintenance_settings' );
-	$maintenance_page_id = ( isset( $wolf_maintenance_settings[ 'page_id' ] ) ) ? $wolf_maintenance_settings[ 'page_id' ] : null;
+	$maintenance_page_id       = ( isset( $wolf_maintenance_settings['page_id'] ) ) ? $wolf_maintenance_settings['page_id'] : null;
 
 	if ( $maintenance_page_id && is_page( $maintenance_page_id ) ) {
 		return true;
