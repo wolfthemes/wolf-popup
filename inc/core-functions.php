@@ -64,7 +64,7 @@ function wolf_popup_get_the_ID() {
  * @param string $default
  * @return string
  */
-function wolf_popup_get_option( $index = '', $name, $default = null ) {
+function wolf_popup_get_option( $index, $name, $default = null ) {
 
 	global $options;
 
@@ -93,7 +93,7 @@ function wolf_popup_get_option( $index = '', $name, $default = null ) {
  * @param string $default
  * @return string
  */
-function wolf_popup_update_option_index( $index = 'settings', $options_array ) {
+function wolf_popup_update_option_index( $index, $options_array ) {
 
 	$wolf_popup_settings = ( get_option( 'wolf_popup_settings' ) && is_array( get_option( 'wolf_popup_settings' ) ) ) ? get_option( 'wolf_popup_settings' ) : array();
 

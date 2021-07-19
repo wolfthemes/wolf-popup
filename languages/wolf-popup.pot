@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Popup Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Popup Manager 1.0.5\n"
+"Project-Id-Version: Popup Manager 1.0.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-popup\n"
-"POT-Creation-Date: 2021-03-19 13:59:04+00:00\n"
+"POT-Creation-Date: 2021-07-19 19:54:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -275,75 +275,75 @@ msgid "Settings"
 msgstr ""
 
 #: inc/admin/class-options.php:84 inc/admin/class-options.php:85
-#: pack/wolf-popup/inc/admin/class-options.php:83
 #: pack/wolf-popup/inc/admin/class-options.php:84
+#: pack/wolf-popup/inc/admin/class-options.php:85
 msgid "Pop-Up"
 msgstr ""
 
 #: inc/admin/class-options.php:217
-#: pack/wolf-popup/inc/admin/class-options.php:216
+#: pack/wolf-popup/inc/admin/class-options.php:217
 msgid "- Disabled -"
 msgstr ""
 
 #: inc/admin/class-options.php:277 inc/admin/class-options.php:312
-#: pack/wolf-popup/inc/admin/class-options.php:272
-#: pack/wolf-popup/inc/admin/class-options.php:302
+#: pack/wolf-popup/inc/admin/class-options.php:277
+#: pack/wolf-popup/inc/admin/class-options.php:312
 msgid "Clear"
 msgstr ""
 
 #: inc/admin/class-options.php:278 inc/admin/class-options.php:313
-#: pack/wolf-popup/inc/admin/class-options.php:273
-#: pack/wolf-popup/inc/admin/class-options.php:303
+#: pack/wolf-popup/inc/admin/class-options.php:278
+#: pack/wolf-popup/inc/admin/class-options.php:313
 msgid "Choose an image"
 msgstr ""
 
 #: inc/admin/class-options.php:290
-#: pack/wolf-popup/inc/admin/class-options.php:285
+#: pack/wolf-popup/inc/admin/class-options.php:290
 msgid "Color"
 msgstr ""
 
 #: inc/admin/class-options.php:302
-#: pack/wolf-popup/inc/admin/class-options.php:297
+#: pack/wolf-popup/inc/admin/class-options.php:302
 msgid "Image"
 msgstr ""
 
 #: inc/admin/class-options.php:324
-#: pack/wolf-popup/inc/admin/class-options.php:314
+#: pack/wolf-popup/inc/admin/class-options.php:324
 msgid "Repeat"
 msgstr ""
 
 #: inc/admin/class-options.php:350
-#: pack/wolf-popup/inc/admin/class-options.php:340
+#: pack/wolf-popup/inc/admin/class-options.php:350
 msgid "Position"
 msgstr ""
 
 #: inc/admin/class-options.php:364
-#: pack/wolf-popup/inc/admin/class-options.php:354
+#: pack/wolf-popup/inc/admin/class-options.php:364
 msgid "cover (resize)"
 msgstr ""
 
 #: inc/admin/class-options.php:365
-#: pack/wolf-popup/inc/admin/class-options.php:355
+#: pack/wolf-popup/inc/admin/class-options.php:365
 msgid "normal"
 msgstr ""
 
 #: inc/admin/class-options.php:366
-#: pack/wolf-popup/inc/admin/class-options.php:356
+#: pack/wolf-popup/inc/admin/class-options.php:366
 msgid "responsive (hard resize)"
 msgstr ""
 
 #: inc/admin/class-options.php:371
-#: pack/wolf-popup/inc/admin/class-options.php:361
+#: pack/wolf-popup/inc/admin/class-options.php:371
 msgid "Size"
 msgstr ""
 
 #: inc/admin/class-options.php:391
-#: pack/wolf-popup/inc/admin/class-options.php:381
+#: pack/wolf-popup/inc/admin/class-options.php:391
 msgid "Attachment"
 msgstr ""
 
 #: inc/admin/class-options.php:416
-#: pack/wolf-popup/inc/admin/class-options.php:406
+#: pack/wolf-popup/inc/admin/class-options.php:416
 msgid "Pop-Up Settings"
 msgstr ""
 

@@ -1,5 +1,8 @@
 # Changelog
 
+#### 19th March 2021 - Version 1.0.6
+
+-   Fix: PHP8 error messages fix
 #### 23th March 2021 - Version 1.0.5
 
 -   Fix: compatibility for new plugin to come

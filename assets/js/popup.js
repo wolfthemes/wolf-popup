@@ -253,15 +253,29 @@ var WolfPopup = function( $ ) {
 				$parentOverlay = $this.closest( '.wolf-popup-overlay' );
 
 			$( '.wolf-popup-overlay' ).removeClass( 'wolf-popup-overlay-visible' );
-			$( '.wolf-popup-overlay' ).one( WVC.transitionEventEnd(), function() {
-				$( this ).removeClass( 'wolf-popup-overlay-show' );
-				setTimeout( function() {
-					WVC.delayWow( $( '.wolf-popup' ) );
-					WVC.resetAOS( $( '.wolf-popup' ) );
-					_this.open = false;
-					_this.animated = false;
-				}, 200 );
-			} );
+
+			if ( this.isWVC ) {
+				$( '.wolf-popup-overlay' ).one( WVC.transitionEventEnd(), function() {
+					$( this ).removeClass( 'wolf-popup-overlay-show' );
+					setTimeout( function() {
+						WVC.delayWow( $( '.wolf-popup' ) );
+						WVC.resetAOS( $( '.wolf-popup' ) );
+						_this.open = false;
+						_this.animated = false;
+					}, 200 );
+				} );
+			} else if ( this.isWolfCore ) {
+				$( '.wolf-popup-overlay' ).one( WolfCore.transitionEventEnd(), function() {
+					$( this ).removeClass( 'wolf-popup-overlay-show' );
+					setTimeout( function() {
+						WolfCore.delayWow( $( '.wolf-popup' ) );
+						WolfCore.resetAOS( $( '.wolf-popup' ) );
+						_this.open = false;
+						_this.animated = false;
+					}, 200 );
+				} );
+			}
+
 		},
 
 		/**
@@ -297,8 +311,16 @@ var WolfPopup = function( $ ) {
 			}
 
 			if ( ! _this.animated ) {
-				WVC.delayWow( $( '#wolf-popup-' + type ) );
-				WVC.resetAOS( $( '#wolf-popup-' + type ) );
+
+				if ( this.isWVC ) {
+
+					WVC.delayWow( $( '#wolf-popup-' + type ) );
+					WVC.resetAOS( $( '#wolf-popup-' + type ) );
+
+				} else if ( this.isWolfCore ) {
+					WolfCore.delayWow( $( '#wolf-popup-' + type ) );
+					WolfCore.resetAOS( $( '#wolf-popup-' + type ) );
+				}
 			}
 
 			$overlay.addClass( 'wolf-popup-overlay-visible' );
@@ -306,22 +328,43 @@ var WolfPopup = function( $ ) {
 			_this.open = true;
 			//console.log( 'open' );
 
-			$overlay.one( WVC.transitionEventEnd(), function() {
+			if ( this.isWVC ) {
 
-				$overlay.addClass( 'wolf-popup-overlay-show' );
+				$overlay.one( WVC.transitionEventEnd(), function() {
 
-				$( '#wolf-popup-' + type ).one( WVC.transitionEventEnd(), function() {
+					$overlay.addClass( 'wolf-popup-overlay-show' );
 
-					if ( ! _this.animated ) {
-						WVC.doWow();
-						WVC.doAOS( $( this ) );
-						_this.animated = true;
+					$( '#wolf-popup-' + type ).one( WVC.transitionEventEnd(), function() {
 
-						window.dispatchEvent( new Event( 'resize' ) );
-						window.dispatchEvent( new Event( 'scroll' ) ); // Force WOW effect
-					}
+						if ( ! _this.animated ) {
+							WVC.doWow();
+							WVC.doAOS( $( this ) );
+							_this.animated = true;
+
+							window.dispatchEvent( new Event( 'resize' ) );
+							window.dispatchEvent( new Event( 'scroll' ) ); // Force WOW effect
+						}
+					} );
 				} );
-			} );
+
+			} else if ( this.isWolfCore ) {
+				$overlay.one( WolfCore.transitionEventEnd(), function() {
+
+					$overlay.addClass( 'wolf-popup-overlay-show' );
+
+					$( '#wolf-popup-' + type ).one( WolfCore.transitionEventEnd(), function() {
+
+						if ( ! _this.animated ) {
+							WolfCore.doWow();
+							WolfCore.doAOS( $( this ) );
+							_this.animated = true;
+
+							window.dispatchEvent( new Event( 'resize' ) );
+							window.dispatchEvent( new Event( 'scroll' ) ); // Force WOW effect
+						}
+					} );
+				} );
+			}
 
 		}
 	};
