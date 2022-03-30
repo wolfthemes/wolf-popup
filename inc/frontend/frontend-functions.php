@@ -189,7 +189,7 @@ function wolf_popup_output_time_delayed_popup( $atts = array() ) {
 							/**
 							 * Page Content
 							 */
-							echo wolf_popup_remove_wpautop( get_post_field( 'post_content', $page_id ) );
+							wolf_popup_get_page_content( $page_id );
 						?>
 					</div>
 				</div>
@@ -204,6 +204,23 @@ function wolf_popup_output_time_delayed_popup( $atts = array() ) {
 
 }
 add_action( 'wolf_body_start', 'wolf_popup_output_time_delayed_popup' );
+
+/**
+ * Get Page content
+ */
+function wolf_popup_get_page_content( $post_id ) {
+
+	if ( class_exists( 'Wolf_Core' ) ) {
+		$post_id = ( $post_id ) ? $post_id : get_the_ID();
+
+		$Elementor = \Elementor\Plugin::instance();
+    	$content = $Elementor->frontend->get_builder_content( $post_id );
+		echo $content;
+
+	} else {
+		echo wolf_popup_remove_wpautop( get_post_field( 'post_content', $page_id ) );
+	}
+}
 
 /**
  * Output time delayed popup
@@ -346,7 +363,7 @@ function wolf_popup_output_exit_intent_popup( $atts = array() ) {
 							/**
 							 * Page Content
 							 */
-							echo wolf_popup_remove_wpautop( get_post_field( 'post_content', $page_id ) );
+							wolf_popup_get_page_content( $page_id );
 						?>
 					</div>
 				</div>

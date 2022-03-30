@@ -1,5 +1,9 @@
 # Changelog
 
+#### 30th March 2021 - Version 1.0.7
+
+-   Tweak: Elementor compatibility for newer themes
+
 #### 19th March 2021 - Version 1.0.6
 
 -   Fix: PHP8 error messages fix

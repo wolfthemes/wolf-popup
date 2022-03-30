@@ -1,14 +1,14 @@
-# Copyright (C) 2021 WolfThemes
+# Copyright (C) 2022 WolfThemes
 # This file is distributed under the same license as the Popup Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Popup Manager 1.0.6\n"
+"Project-Id-Version: Popup Manager 1.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-popup\n"
-"POT-Creation-Date: 2021-07-20 07:52:01+00:00\n"
+"POT-Creation-Date: 2022-03-30 13:30:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -358,9 +358,9 @@ msgid "Plugin reactivated successfully."
 msgstr ""
 
 #: inc/frontend/frontend-functions.php:198
-#: inc/frontend/frontend-functions.php:355
+#: inc/frontend/frontend-functions.php:372
 #: pack/wolf-popup/inc/frontend/frontend-functions.php:198
-#: pack/wolf-popup/inc/frontend/frontend-functions.php:355
+#: pack/wolf-popup/inc/frontend/frontend-functions.php:372
 msgid "Don't show this message again"
 msgstr ""
 
