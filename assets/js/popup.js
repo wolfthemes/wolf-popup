@@ -5,10 +5,10 @@
  */
 /* jshint -W062 */
 
-/* global WVC, WolfCore, WolfPopupParams */
+/* global WVC, WolfCore, WolfPopupParams, WVCParams */
 var WolfPopup = function( $ ) {
 
-	'use strict';
+	"use strict";
 
 	return {
 
@@ -20,8 +20,8 @@ var WolfPopup = function( $ ) {
 		timeDelayedCount : 0,
 		exitIntentOpen : false,
 		exitIntentClock : 0,
-		isWVC: 'undefined' !== typeof WVC,
-		isWolfCore: 'undefined' !== typeof WolfCore,
+		isWVC: "undefined" !== typeof WVCParams,
+		isWolfCore: "undefined" !== typeof WolfCore,
 
 		/**
 		 * Init UI
@@ -36,11 +36,11 @@ var WolfPopup = function( $ ) {
 
 			var _this = this;
 
-			this.timeDelayedClock = sessionStorage.getItem( 'wolf-popup-time-delayed-timer' );
-			this.timeDelayedCount = sessionStorage.getItem( 'wolf-popup-time-delayed-count' ) || 0;
+			this.timeDelayedClock = sessionStorage.getItem( "wolf-popup-time-delayed-timer" );
+			this.timeDelayedCount = sessionStorage.getItem( "wolf-popup-time-delayed-count" ) || 0;
 
-			this.exitIntentClock = sessionStorage.getItem( 'wolf-popup-exit-intent-timer' );
-			this.exitIntentCount = sessionStorage.getItem( 'wolf-popup-exit-intent-count' ) || 0;
+			this.exitIntentClock = sessionStorage.getItem( "wolf-popup-exit-intent-timer" );
+			this.exitIntentCount = sessionStorage.getItem( "wolf-popup-exit-intent-count" ) || 0;
 
 			this.timeDelayedPopUp();
 			this.exitIntentPopUp();
@@ -49,57 +49,57 @@ var WolfPopup = function( $ ) {
 			if ( this.isWolfCore ) {
 
 				// Reset and reinit anim effect
-				$( window ).on( 'wolf_core_fullpage_changed', function() {
-					WolfCore.resetAOS( $( '.wolf-popup' ) );
+				$( window ).on( "wolf_core_fullpage_changed", function() {
+					WolfCore.resetAOS( $( ".wolf-popup" ) );
 				} );
 
-				WolfCore.resetAOS( $( '.wolf-popup' ) );
+				WolfCore.resetAOS( $( ".wolf-popup" ) );
 
 			} else if ( this.isWVC ) {
 				// Reset and reinit anim effect
-				$( window ).on( 'wvc_fullpage_changed', function() {
-					WVC.resetAOS( $( '.wolf-popup' ) );
+				$( window ).on( "wvc_fullpage_changed", function() {
+					WVC.resetAOS( $( ".wolf-popup" ) );
 				} );
 
-				WVC.resetAOS( $( '.wolf-popup' ) );
+				WVC.resetAOS( $( ".wolf-popup" ) );
 			}
 
 
 			/* Set popup height */
 			$( window ).resize( function() {
-				$( '.wolf-popup-overlay' ).css( {
-					'height' : $( '.wolf-popup-container' ).height()
+				$( ".wolf-popup-overlay" ).css( {
+					"height" : $( ".wolf-popup-container" ).height()
 				} );
 			} );
 		},
 
 		timeDelayedPopUp : function () {
 
-			if ( $( '#wolf-popup-overlay-time-delayed' ).length ) {
+			if ( $( "#wolf-popup-overlay-time-delayed" ).length ) {
 
-				if ( 'opt-out' === Cookies.get( 'wolf_popup_time_delayed' ) ) {
-					//console.log( 'cookie set' );
+				if ( "opt-out" === Cookies.get( "wolf_popup_time_delayed" ) ) {
+					//console.log( "cookie set" );
 					return;
 				}
 
 				/**
 				 * remove default opt-out link if set in content
 				 */
-				if ( $( '#wolf-popup-time-delayed' ).find( '.wolf-popup-close-opt-out' ).length ) {
-					$( '#wolf-popup-overlay-time-delayed' ).find( '.wolf-popup-bottom-close' ).remove();
+				if ( $( "#wolf-popup-time-delayed" ).find( ".wolf-popup-close-opt-out" ).length ) {
+					$( "#wolf-popup-overlay-time-delayed" ).find( ".wolf-popup-bottom-close" ).remove();
 				}
 
 				var _this = this,
 					timer = null,
-					$overlay = $( '#wolf-popup-overlay-time-delayed' ),
-					delay = parseInt( $overlay.data( 'wolf-popup-delay' ) ),
-					clookieTime = $overlay.data( 'wolf-popup-cookie-time' ),
-					count = $overlay.data( 'wolf-popup-count' );
+					$overlay = $( "#wolf-popup-overlay-time-delayed" ),
+					delay = parseInt( $overlay.data( "wolf-popup-delay" ) ),
+					clookieTime = $overlay.data( "wolf-popup-cookie-time" ),
+					count = $overlay.data( "wolf-popup-count" );
 
 				//console.log( _this.timeDelayedCount );
 
 				if ( count < _this.timeDelayedCount ) {
-					//console.log( 'already displayed ' + count );
+					//console.log( "already displayed " + count );
 					return;
 				}
 
@@ -115,14 +115,14 @@ var WolfPopup = function( $ ) {
 						_this.timeDelayedClock = 0;
 
 						clearInterval( timer );
-						sessionStorage.setItem( 'wolf-popup-time-delayed-timer', 0 );
+						sessionStorage.setItem( "wolf-popup-time-delayed-timer", 0 );
 
 						/* Show popup */
-						_this.showPopup( 'time-delayed' );
+						_this.showPopup( "time-delayed" );
 
 					} else {
 						_this.timeDelayedClock++;
-						sessionStorage.setItem( 'wolf-popup-time-delayed-timer', _this.timeDelayedClock );
+						sessionStorage.setItem( "wolf-popup-time-delayed-timer", _this.timeDelayedClock );
 						//console.log( _this.timeDelayedClock );
 					}
 
@@ -132,31 +132,31 @@ var WolfPopup = function( $ ) {
 
 		exitIntentPopUp : function () {
 
-			if ( $( '#wolf-popup-overlay-exit-intent' ).length ) {
+			if ( $( "#wolf-popup-overlay-exit-intent" ).length ) {
 
-				if ( 'opt-out' === Cookies.get( 'wolf_popup_exit_intent' ) ) {
-					//console.log( 'exit intent cookie set' );
+				if ( "opt-out" === Cookies.get( "wolf_popup_exit_intent" ) ) {
+					//console.log( "exit intent cookie set" );
 					return;
 				}
 
 				/**
 				 * remove default opt-out link if set in content
 				 */
-				if ( $( '#wolf-popup-exit-intent' ).find( '.wolf-popup-close-opt-out' ).length ) {
-					$( '#wolf-popup-overlay-exit-intent' ).find( '.wolf-popup-bottom-close' ).remove();
+				if ( $( "#wolf-popup-exit-intent" ).find( ".wolf-popup-close-opt-out" ).length ) {
+					$( "#wolf-popup-overlay-exit-intent" ).find( ".wolf-popup-bottom-close" ).remove();
 				}
 
 				var _this = this,
 					timer = null,
-					$overlay = $( '#wolf-popup-overlay-exit-intent' ),
-					delay = parseInt( $overlay.data( 'wolf-popup-delay' ) ),
-					clookieTime = $overlay.data( 'wolf-popup-cookie-time' ),
-					count = $overlay.data( 'wolf-popup-count' );
+					$overlay = $( "#wolf-popup-overlay-exit-intent" ),
+					delay = parseInt( $overlay.data( "wolf-popup-delay" ) ),
+					clookieTime = $overlay.data( "wolf-popup-cookie-time" ),
+					count = $overlay.data( "wolf-popup-count" );
 
 				//console.log( _this.exitIntentCount );
 
 				if ( count < _this.exitIntentCount ) {
-					//console.log( 'already displayed ' + count );
+					//console.log( "already displayed " + count );
 					return;
 				}
 
@@ -172,17 +172,17 @@ var WolfPopup = function( $ ) {
 						_this.exitIntentClock = 0;
 
 						clearInterval( timer );
-						sessionStorage.setItem( 'wolf-popup-exit-intent-timer', 0 );
+						sessionStorage.setItem( "wolf-popup-exit-intent-timer", 0 );
 
 						/* Show popup */
-						$( document ).on( 'mouseleave', function() {
-							//console.log( 'open ' + _this.open );
-							_this.showPopup( 'exit-intent' );
+						$( document ).on( "mouseleave", function() {
+							//console.log( "open " + _this.open );
+							_this.showPopup( "exit-intent" );
 						} );
 
 					} else {
 						_this.exitIntentClock++;
-						sessionStorage.setItem( 'wolf-popup-exit-intent-timer', _this.exitIntentClock );
+						sessionStorage.setItem( "wolf-popup-exit-intent-timer", _this.exitIntentClock );
 						//console.log( _this.exitIntentClock );
 					}
 
@@ -202,43 +202,43 @@ var WolfPopup = function( $ ) {
 				cookieTime,
 				count;
 
-			$( document ).on( 'click', '.wolf-popup-close', function( event ) {
+			$( document ).on( "click", ".wolf-popup-close", function( event ) {
 
 				event.preventDefault();
 
 				$closeButton = $( this ),
-				$overlay = $closeButton.closest( '.wolf-popup-overlay' );
-				type = $overlay.data( 'wolf-popup-type' );
-				cookieTime = $overlay.data( 'wolf-popup-cookie-time' );
-				count = $overlay.data( 'wolf-popup-count' );
+				$overlay = $closeButton.closest( ".wolf-popup-overlay" );
+				type = $overlay.data( "wolf-popup-type" );
+				cookieTime = $overlay.data( "wolf-popup-cookie-time" );
+				count = $overlay.data( "wolf-popup-count" );
 
-				if ( 'time-delayed' === type ) {
+				if ( "time-delayed" === type ) {
 
 					/* Set cookie */
-					if ( $closeButton.hasClass( 'wolf-popup-close-opt-out' ) ) {
-						Cookies.set( 'wolf_popup_time_delayed', 'opt-out', { expires: cookieTime, path: '/' } );
+					if ( $closeButton.hasClass( "wolf-popup-close-opt-out" ) ) {
+						Cookies.set( "wolf_popup_time_delayed", "opt-out", { expires: cookieTime, path: "/" } );
 					}
 
 					_this.timeDelayedCount++;
-					sessionStorage.setItem( 'wolf-popup-time-delayed-count', _this.timeDelayedCount );
+					sessionStorage.setItem( "wolf-popup-time-delayed-count", _this.timeDelayedCount );
 
 					if ( count === _this.timeDelayedCount ) {
-						Cookies.set( 'wolf_popup_time_delayed', 'opt-out', { expires: cookieTime, path: '/' } );
+						Cookies.set( "wolf_popup_time_delayed", "opt-out", { expires: cookieTime, path: "/" } );
 					}
 				}
 
-				if ( 'exit-intent' === type ) {
+				if ( "exit-intent" === type ) {
 					_this.exitIntentFlag = true;
 
-					if ( $closeButton.hasClass( 'wolf-popup-close-opt-out' ) ) {
-						Cookies.set( 'wolf_popup_exit_intent', 'opt-out', { expires: cookieTime, path: '/' } );
+					if ( $closeButton.hasClass( "wolf-popup-close-opt-out" ) ) {
+						Cookies.set( "wolf_popup_exit_intent", "opt-out", { expires: cookieTime, path: "/" } );
 					}
 
 					_this.exitIntentCount++;
-					sessionStorage.setItem( 'wolf-popup-exit-intent-count', _this.exitIntentCount );
+					sessionStorage.setItem( "wolf-popup-exit-intent-count", _this.exitIntentCount );
 
 					if ( count === _this.exitIntentCount ) {
-						Cookies.set( 'wolf_popup_exit_intent', 'opt-out', { expires: cookieTime, path: '/' } );
+						Cookies.set( "wolf_popup_exit_intent", "opt-out", { expires: cookieTime, path: "/" } );
 					}
 				}
 
@@ -249,27 +249,27 @@ var WolfPopup = function( $ ) {
 		closeAllPopups : function( $this ) {
 
 			var _this = this,
-				$this = $this || $( '.wolf-popup-show' ),
-				$parentOverlay = $this.closest( '.wolf-popup-overlay' );
+				$this = $this || $( ".wolf-popup-show" ),
+				$parentOverlay = $this.closest( ".wolf-popup-overlay" );
 
-			$( '.wolf-popup-overlay' ).removeClass( 'wolf-popup-overlay-visible' );
+			$( ".wolf-popup-overlay" ).removeClass( "wolf-popup-overlay-visible" );
 
 			if ( this.isWVC ) {
-				$( '.wolf-popup-overlay' ).one( WVC.transitionEventEnd(), function() {
-					$( this ).removeClass( 'wolf-popup-overlay-show' );
+				$( ".wolf-popup-overlay" ).one( WVC.transitionEventEnd(), function() {
+					$( this ).removeClass( "wolf-popup-overlay-show" );
 					setTimeout( function() {
-						WVC.delayWow( $( '.wolf-popup' ) );
-						WVC.resetAOS( $( '.wolf-popup' ) );
+						WVC.delayWow( $( ".wolf-popup" ) );
+						WVC.resetAOS( $( ".wolf-popup" ) );
 						_this.open = false;
 						_this.animated = false;
 					}, 200 );
 				} );
 			} else if ( this.isWolfCore ) {
-				$( '.wolf-popup-overlay' ).one( WolfCore.transitionEventEnd(), function() {
-					$( this ).removeClass( 'wolf-popup-overlay-show' );
+				$( ".wolf-popup-overlay" ).one( WolfCore.transitionEventEnd(), function() {
+					$( this ).removeClass( "wolf-popup-overlay-show" );
 					setTimeout( function() {
-						WolfCore.delayWow( $( '.wolf-popup' ) );
-						WolfCore.resetAOS( $( '.wolf-popup' ) );
+						WolfCore.delayWow( $( ".wolf-popup" ) );
+						WolfCore.resetAOS( $( ".wolf-popup" ) );
 						_this.open = false;
 						_this.animated = false;
 					}, 200 );
@@ -283,11 +283,11 @@ var WolfPopup = function( $ ) {
 		 */
 		transitionEventEnd : function () {
 
-			var t, el = document.createElement( 'transitionDetector' ),
+			var t, el = document.createElement( "transitionDetector" ),
 				transEndEventNames = {
-					'WebkitTransition' : 'webkitTransitionEnd',// Saf 6, Android Browser
-					'MozTransition' : 'transitionend',  // only for FF < 15
-					'transition' : 'transitionend'       // IE10, Opera, Chrome, FF 15+, Saf 7+
+					"WebkitTransition" : "webkitTransitionEnd",// Saf 6, Android Browser
+					"MozTransition" : "transitionend",  // only for FF < 15
+					"transition" : "transitionend"       // IE10, Opera, Chrome, FF 15+, Saf 7+
 				};
 
 			for ( t in transEndEventNames ) {
@@ -300,13 +300,13 @@ var WolfPopup = function( $ ) {
 		showPopup : function ( type ) {
 
 			var _this = this,
-				$overlay = $( '#wolf-popup-overlay-' + type );
+				$overlay = $( "#wolf-popup-overlay-" + type );
 
 			if ( true === this.open ) {
 				return;
 			}
 
-			if ( this.exitIntentFlag && 'exit-intent' === type ) {
+			if ( this.exitIntentFlag && "exit-intent" === type ) {
 				return;
 			}
 
@@ -314,35 +314,35 @@ var WolfPopup = function( $ ) {
 
 				if ( this.isWVC ) {
 
-					WVC.delayWow( $( '#wolf-popup-' + type ) );
-					WVC.resetAOS( $( '#wolf-popup-' + type ) );
+					WVC.delayWow( $( "#wolf-popup-" + type ) );
+					WVC.resetAOS( $( "#wolf-popup-" + type ) );
 
 				} else if ( this.isWolfCore ) {
-					WolfCore.delayWow( $( '#wolf-popup-' + type ) );
-					WolfCore.resetAOS( $( '#wolf-popup-' + type ) );
+					WolfCore.delayWow( $( "#wolf-popup-" + type ) );
+					WolfCore.resetAOS( $( "#wolf-popup-" + type ) );
 				}
 			}
 
-			$overlay.addClass( 'wolf-popup-overlay-visible' );
+			$overlay.addClass( "wolf-popup-overlay-visible" );
 
 			_this.open = true;
-			//console.log( 'open' );
+			//console.log( "open" );
 
 			if ( this.isWVC ) {
 
 				$overlay.one( WVC.transitionEventEnd(), function() {
 
-					$overlay.addClass( 'wolf-popup-overlay-show' );
+					$overlay.addClass( "wolf-popup-overlay-show" );
 
-					$( '#wolf-popup-' + type ).one( WVC.transitionEventEnd(), function() {
+					$( "#wolf-popup-" + type ).one( WVC.transitionEventEnd(), function() {
 
 						if ( ! _this.animated ) {
 							WVC.doWow();
 							WVC.doAOS( $( this ) );
 							_this.animated = true;
 
-							window.dispatchEvent( new Event( 'resize' ) );
-							window.dispatchEvent( new Event( 'scroll' ) ); // Force WOW effect
+							window.dispatchEvent( new Event( "resize" ) );
+							window.dispatchEvent( new Event( "scroll" ) ); // Force WOW effect
 						}
 					} );
 				} );
@@ -350,17 +350,17 @@ var WolfPopup = function( $ ) {
 			} else if ( this.isWolfCore ) {
 				$overlay.one( WolfCore.transitionEventEnd(), function() {
 
-					$overlay.addClass( 'wolf-popup-overlay-show' );
+					$overlay.addClass( "wolf-popup-overlay-show" );
 
-					$( '#wolf-popup-' + type ).one( WolfCore.transitionEventEnd(), function() {
+					$( "#wolf-popup-" + type ).one( WolfCore.transitionEventEnd(), function() {
 
 						if ( ! _this.animated ) {
 							WolfCore.doWow();
 							WolfCore.doAOS( $( this ) );
 							_this.animated = true;
 
-							window.dispatchEvent( new Event( 'resize' ) );
-							window.dispatchEvent( new Event( 'scroll' ) ); // Force WOW effect
+							window.dispatchEvent( new Event( "resize" ) );
+							window.dispatchEvent( new Event( "scroll" ) ); // Force WOW effect
 						}
 					} );
 				} );
@@ -373,9 +373,9 @@ var WolfPopup = function( $ ) {
 
 ( function( $ ) {
 
-	'use strict';
+	"use strict";
 
-	$( window ).on( 'load', function() {
+	$( window ).on( "load", function() {
 		WolfPopup.init();
 	} );
 

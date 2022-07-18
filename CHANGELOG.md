@@ -1,5 +1,9 @@
 # Changelog
 
+#### 18th July 2022 - Version 1.0.8
+
+-   Fix: page_id error
+
 #### 30th March 2021 - Version 1.0.7
 
 -   Tweak: Elementor compatibility for newer themes
