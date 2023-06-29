@@ -1,5 +1,9 @@
 # Changelog
 
+#### 29th June 2023 - Version 1.0.9
+
+-   Tweak: Compatibility with Wolf Quickview plugin
+
 #### 18th July 2022 - Version 1.0.8
 
 -   Fix: page_id error

@@ -31,7 +31,7 @@ var WolfPopup = function( $ ) {
 			this.isMobile = WolfPopupParams.isMobile;
 
 			if ( this.isMobile ) {
-				//return;
+				return;
 			}
 
 			var _this = this;
@@ -109,8 +109,9 @@ var WolfPopup = function( $ ) {
 					//console.log( delay );
 					//console.log( _this.clock );
 					//console.log( _this.closed );
+					var quickViewOpen = $( 'body' ).hasClass( 'wolf-wcqv-open' );
 
-					if ( count > _this.timeDelayedCount && delay < _this.timeDelayedClock && _this.open === false ) {
+					if ( count > _this.timeDelayedCount && delay < _this.timeDelayedClock && _this.open === false && ! quickViewOpen ) {
 
 						_this.timeDelayedClock = 0;
 
