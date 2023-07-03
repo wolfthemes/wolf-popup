@@ -115,3 +115,20 @@
 		//transform:scale(0.8);
 	}
 }
+
+@media screen and (max-width: 600px) {
+
+	.wolf-popup-exit-intent-mobile-disabled{
+		#wolf-popup-overlay-exit-intent{
+			display: none!important;
+			visibility: hidden!important;
+		}
+	}
+
+	.wolf-popup-time-delayed-mobile-disabled{
+		#wolf-popup-overlay-time-delayed{
+			display: none!important;
+			visibility: hidden!important;
+		}
+	}
+}

@@ -378,3 +378,22 @@ function wolf_popup_output_exit_intent_popup( $atts = array() ) {
 
 }
 add_action( 'wolf_body_start', 'wolf_popup_output_exit_intent_popup' );
+
+
+/**
+ * Add body custom body class
+ *
+ */
+function wolf_popup_add_classes( $classes ) {
+
+	if ( wolf_popup_get_option( 'time-delayed', 'disable_mobile', false ) ) {
+		$classes[] = 'wolf-popup-time-delayed-mobile-disabled';
+	}
+
+	if ( wolf_popup_get_option( 'exit-intent', 'disable_mobile', false ) ) {
+		$classes[] = 'wolf-popup-exit-intent-mobile-disabled';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'wolf_popup_add_classes' );

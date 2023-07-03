@@ -1,5 +1,9 @@
 # Changelog
 
+#### 3rd July 2023 - Version 1.1.0
+
+-   Tweak: Force disable popup on mobile with CSS when option is on
+
 #### 29th June 2023 - Version 1.0.9
 
 -   Tweak: Compatibility with Wolf Quickview plugin
