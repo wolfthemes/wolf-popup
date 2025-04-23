@@ -71,7 +71,7 @@ if ( ! class_exists( 'Wolf_Popup' ) ) {
 		public function __construct() {
 
 			$this->define_constants();
-			$this->includes();
+			//$this->includes();
 			$this->init_hooks();
 
 			do_action( 'wolf_popup_loaded' );
@@ -82,6 +82,8 @@ if ( ! class_exists( 'Wolf_Popup' ) ) {
 		 */
 		private function init_hooks() {
 			register_activation_hook( __FILE__, array( $this, 'activate' ) );
+
+			add_action( 'init', array( $this, 'includes' ), 0 );
 			add_action( 'init', array( $this, 'init' ), 0 );
 
 			add_action( 'admin_init', array( $this, 'plugin_update' ) );
