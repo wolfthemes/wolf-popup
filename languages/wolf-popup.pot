@@ -1,14 +1,14 @@
-# Copyright (C) 2023 WolfThemes
+# Copyright (C) 2025 WolfThemes
 # This file is distributed under the same license as the Popup Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Popup Manager 1.1.0\n"
+"Project-Id-Version: Popup Manager 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-popup\n"
-"POT-Creation-Date: 2023-07-03 09:49:42+00:00\n"
+"POT-Creation-Date: 2025-04-24 12:25:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -61,85 +61,60 @@ msgid "B"
 msgstr ""
 
 #: inc/admin/admin-options.php:16
-#: pack/wolf-popup/inc/admin/admin-options.php:16
 msgid "Time Delayed"
 msgstr ""
 
 #: inc/admin/admin-options.php:24 inc/admin/admin-options.php:151
-#: pack/wolf-popup/inc/admin/admin-options.php:24
-#: pack/wolf-popup/inc/admin/admin-options.php:151
 msgid "Content"
 msgstr ""
 
 #: inc/admin/admin-options.php:25 inc/admin/admin-options.php:152
-#: pack/wolf-popup/inc/admin/admin-options.php:25
-#: pack/wolf-popup/inc/admin/admin-options.php:152
 msgid "Choose the page you want to use as your pop-up content."
 msgstr ""
 
 #: inc/admin/admin-options.php:31 inc/admin/admin-options.php:158
-#: pack/wolf-popup/inc/admin/admin-options.php:31
-#: pack/wolf-popup/inc/admin/admin-options.php:158
 msgid "Test mode"
 msgstr ""
 
 #: inc/admin/admin-options.php:32 inc/admin/admin-options.php:159
-#: pack/wolf-popup/inc/admin/admin-options.php:32
-#: pack/wolf-popup/inc/admin/admin-options.php:159
 msgid "It will only show the pop-up to logged-in admin users."
 msgstr ""
 
 #: inc/admin/admin-options.php:38 inc/admin/admin-options.php:165
-#: pack/wolf-popup/inc/admin/admin-options.php:38
-#: pack/wolf-popup/inc/admin/admin-options.php:165
 msgid "Disable on Mobile"
 msgstr ""
 
 #: inc/admin/admin-options.php:39 inc/admin/admin-options.php:166
-#: pack/wolf-popup/inc/admin/admin-options.php:39
-#: pack/wolf-popup/inc/admin/admin-options.php:166
 msgid ""
 "It is recommended as Google tends to penalize websites that uses pop-ups on "
 "mobile."
 msgstr ""
 
 #: inc/admin/admin-options.php:45 inc/admin/admin-options.php:172
-#: pack/wolf-popup/inc/admin/admin-options.php:45
-#: pack/wolf-popup/inc/admin/admin-options.php:172
 msgid "Type"
 msgstr ""
 
 #: inc/admin/admin-options.php:47 inc/admin/admin-options.php:174
-#: pack/wolf-popup/inc/admin/admin-options.php:47
-#: pack/wolf-popup/inc/admin/admin-options.php:174
 msgid "Standard"
 msgstr ""
 
 #: inc/admin/admin-options.php:48
-#: pack/wolf-popup/inc/admin/admin-options.php:48
 msgid "Non-Intrusive (bottom left corner)"
 msgstr ""
 
 #: inc/admin/admin-options.php:55 inc/admin/admin-options.php:182
-#: pack/wolf-popup/inc/admin/admin-options.php:55
-#: pack/wolf-popup/inc/admin/admin-options.php:182
 msgid "Exclude MailChimp subscribers"
 msgstr ""
 
 #: inc/admin/admin-options.php:56 inc/admin/admin-options.php:183
-#: pack/wolf-popup/inc/admin/admin-options.php:56
-#: pack/wolf-popup/inc/admin/admin-options.php:183
 msgid "Works only if %s is installed and if the %s is used to collect subscribers."
 msgstr ""
 
 #: inc/admin/admin-options.php:62 inc/admin/admin-options.php:197
-#: pack/wolf-popup/inc/admin/admin-options.php:62
-#: pack/wolf-popup/inc/admin/admin-options.php:197
 msgid "Delay"
 msgstr ""
 
 #: inc/admin/admin-options.php:64
-#: pack/wolf-popup/inc/admin/admin-options.php:64
 msgid ""
 "The time before the modal window pops up in seconds.<br>You can set a very "
 "high number to prevent the window to pop-up automatically if you want it to "
@@ -147,106 +122,74 @@ msgid ""
 msgstr ""
 
 #: inc/admin/admin-options.php:71 inc/admin/admin-options.php:190
-#: pack/wolf-popup/inc/admin/admin-options.php:71
-#: pack/wolf-popup/inc/admin/admin-options.php:190
 msgid "Display Count"
 msgstr ""
 
 #: inc/admin/admin-options.php:72 inc/admin/admin-options.php:191
-#: pack/wolf-popup/inc/admin/admin-options.php:72
-#: pack/wolf-popup/inc/admin/admin-options.php:191
 msgid "How many time the pop-up should appear (if not opted out)."
 msgstr ""
 
 #: inc/admin/admin-options.php:78 inc/admin/admin-options.php:205
-#: pack/wolf-popup/inc/admin/admin-options.php:78
-#: pack/wolf-popup/inc/admin/admin-options.php:205
 msgid "Cookie Persistency"
 msgstr ""
 
 #: inc/admin/admin-options.php:80 inc/admin/admin-options.php:207
-#: pack/wolf-popup/inc/admin/admin-options.php:80
-#: pack/wolf-popup/inc/admin/admin-options.php:207
 msgid "How long the browser will remember the user opt-out action (in days)."
 msgstr ""
 
 #: inc/admin/admin-options.php:86 inc/admin/admin-options.php:213
-#: pack/wolf-popup/inc/admin/admin-options.php:86
-#: pack/wolf-popup/inc/admin/admin-options.php:213
 msgid "Modal Window Width"
 msgstr ""
 
 #: inc/admin/admin-options.php:93 inc/admin/admin-options.php:220
-#: pack/wolf-popup/inc/admin/admin-options.php:93
-#: pack/wolf-popup/inc/admin/admin-options.php:220
 msgid "Exclude Post Types"
 msgstr ""
 
 #: inc/admin/admin-options.php:95 inc/admin/admin-options.php:222
-#: pack/wolf-popup/inc/admin/admin-options.php:95
-#: pack/wolf-popup/inc/admin/admin-options.php:222
 msgid ""
 "The modal window will NOT popup in these specific post types. Separate each "
 "post type by a comma."
 msgstr ""
 
 #: inc/admin/admin-options.php:101 inc/admin/admin-options.php:228
-#: pack/wolf-popup/inc/admin/admin-options.php:101
-#: pack/wolf-popup/inc/admin/admin-options.php:228
 msgid "Include Post Types"
 msgstr ""
 
 #: inc/admin/admin-options.php:103 inc/admin/admin-options.php:230
-#: pack/wolf-popup/inc/admin/admin-options.php:103
-#: pack/wolf-popup/inc/admin/admin-options.php:230
 msgid ""
 "The modal window will popup ONLY in these specific post types. Separate "
 "each post type by a comma."
 msgstr ""
 
 #: inc/admin/admin-options.php:109 inc/admin/admin-options.php:236
-#: pack/wolf-popup/inc/admin/admin-options.php:109
-#: pack/wolf-popup/inc/admin/admin-options.php:236
 msgid "Exclude Post IDs"
 msgstr ""
 
 #: inc/admin/admin-options.php:111 inc/admin/admin-options.php:238
-#: pack/wolf-popup/inc/admin/admin-options.php:111
-#: pack/wolf-popup/inc/admin/admin-options.php:238
 msgid ""
 "The modal window will NOT popup in these specific posts. Separate each ID "
 "by a comma."
 msgstr ""
 
 #: inc/admin/admin-options.php:117 inc/admin/admin-options.php:244
-#: pack/wolf-popup/inc/admin/admin-options.php:117
-#: pack/wolf-popup/inc/admin/admin-options.php:244
 msgid "Include Post IDs"
 msgstr ""
 
 #: inc/admin/admin-options.php:119 inc/admin/admin-options.php:246
-#: pack/wolf-popup/inc/admin/admin-options.php:119
-#: pack/wolf-popup/inc/admin/admin-options.php:246
 msgid ""
 "The modal window will popup ONLY in these specific posts. Separate each ID "
 "by a comma."
 msgstr ""
 
 #: inc/admin/admin-options.php:125 inc/admin/admin-options.php:252
-#: pack/wolf-popup/inc/admin/admin-options.php:125
-#: pack/wolf-popup/inc/admin/admin-options.php:252
 msgid "Close Button Color"
 msgstr ""
 
 #: inc/admin/admin-options.php:131 inc/admin/admin-options.php:258
-#: pack/wolf-popup/inc/admin/admin-options.php:131
-#: pack/wolf-popup/inc/admin/admin-options.php:258
 msgid "Info"
 msgstr ""
 
 #: inc/admin/admin-options.php:133 inc/admin/admin-options.php:260
-#: pack/wolf-popup/inc/admin/admin-options.php:133
-#: pack/wolf-popup/inc/admin/admin-options.php:260
 msgid ""
 "You can add the <strong>\"%s\"</strong> class to any link to use it as "
 "pop-up window \"close\" button.<br>Also add the <strong>\"%s\"</strong> "
@@ -256,111 +199,89 @@ msgid ""
 msgstr ""
 
 #: inc/admin/admin-options.php:143
-#: pack/wolf-popup/inc/admin/admin-options.php:143
 msgid "Exit Intent"
 msgstr ""
 
 #: inc/admin/admin-options.php:175
-#: pack/wolf-popup/inc/admin/admin-options.php:175
 msgid "Non-Intrusive (bottom right corner)"
 msgstr ""
 
 #: inc/admin/admin-options.php:199
-#: pack/wolf-popup/inc/admin/admin-options.php:199
 msgid "The time before the modal window pops up in seconds."
 msgstr ""
 
-#: inc/admin/class-admin.php:52 pack/wolf-popup/inc/admin/class-admin.php:52
+#: inc/admin/class-admin.php:52
 msgid "Settings"
 msgstr ""
 
 #: inc/admin/class-options.php:84 inc/admin/class-options.php:85
-#: pack/wolf-popup/inc/admin/class-options.php:84
-#: pack/wolf-popup/inc/admin/class-options.php:85
 msgid "Pop-Up"
 msgstr ""
 
 #: inc/admin/class-options.php:217
-#: pack/wolf-popup/inc/admin/class-options.php:217
 msgid "- Disabled -"
 msgstr ""
 
 #: inc/admin/class-options.php:277 inc/admin/class-options.php:312
-#: pack/wolf-popup/inc/admin/class-options.php:277
-#: pack/wolf-popup/inc/admin/class-options.php:312
 msgid "Clear"
 msgstr ""
 
 #: inc/admin/class-options.php:278 inc/admin/class-options.php:313
-#: pack/wolf-popup/inc/admin/class-options.php:278
-#: pack/wolf-popup/inc/admin/class-options.php:313
 msgid "Choose an image"
 msgstr ""
 
 #: inc/admin/class-options.php:290
-#: pack/wolf-popup/inc/admin/class-options.php:290
 msgid "Color"
 msgstr ""
 
 #: inc/admin/class-options.php:302
-#: pack/wolf-popup/inc/admin/class-options.php:302
 msgid "Image"
 msgstr ""
 
 #: inc/admin/class-options.php:324
-#: pack/wolf-popup/inc/admin/class-options.php:324
 msgid "Repeat"
 msgstr ""
 
 #: inc/admin/class-options.php:350
-#: pack/wolf-popup/inc/admin/class-options.php:350
 msgid "Position"
 msgstr ""
 
 #: inc/admin/class-options.php:364
-#: pack/wolf-popup/inc/admin/class-options.php:364
 msgid "cover (resize)"
 msgstr ""
 
 #: inc/admin/class-options.php:365
-#: pack/wolf-popup/inc/admin/class-options.php:365
 msgid "normal"
 msgstr ""
 
 #: inc/admin/class-options.php:366
-#: pack/wolf-popup/inc/admin/class-options.php:366
 msgid "responsive (hard resize)"
 msgstr ""
 
 #: inc/admin/class-options.php:371
-#: pack/wolf-popup/inc/admin/class-options.php:371
 msgid "Size"
 msgstr ""
 
 #: inc/admin/class-options.php:391
-#: pack/wolf-popup/inc/admin/class-options.php:391
 msgid "Attachment"
 msgstr ""
 
 #: inc/admin/class-options.php:416
-#: pack/wolf-popup/inc/admin/class-options.php:416
 msgid "Pop-Up Settings"
 msgstr ""
 
-#: inc/admin/updater.php:434 pack/wolf-popup/inc/admin/updater.php:434
+#: inc/admin/updater.php:434
 msgid ""
 "The plugin has been updated, but could not be reactivated. Please "
 "reactivate it manually."
 msgstr ""
 
-#: inc/admin/updater.php:435 pack/wolf-popup/inc/admin/updater.php:435
+#: inc/admin/updater.php:435
 msgid "Plugin reactivated successfully."
 msgstr ""
 
 #: inc/frontend/frontend-functions.php:198
 #: inc/frontend/frontend-functions.php:372
-#: pack/wolf-popup/inc/frontend/frontend-functions.php:198
-#: pack/wolf-popup/inc/frontend/frontend-functions.php:372
 msgid "Don't show this message again"
 msgstr ""
 

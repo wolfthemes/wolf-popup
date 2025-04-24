@@ -1,5 +1,9 @@
 # Changelog
 
+#### 24th April 2025 - Version 1.1.1
+
+-   Fix: Prevent loading_plugin_text notice message
+
 #### 3rd July 2023 - Version 1.1.0
 
 -   Tweak: Force disable popup on mobile with CSS when option is on
